@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum Product implements Comparable<Product> {
+enum Product{
   dart(
     title: 'Dart',
     description: 'the best object language',
@@ -26,9 +26,6 @@ enum Product implements Comparable<Product> {
     required this.description,
     required this.image,
   });
-
-  @override
-  int compareTo(Product other) => title.compareTo(other.title);
 }
 
 void main() {
@@ -43,7 +40,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.blue,
-        appBar: AppBar(title: const Text('Products')),
+        appBar: AppBar(title: const Text('Products'), backgroundColor: Colors.grey,),
 
         body: const Padding(
           padding: EdgeInsets.all(20.0),
