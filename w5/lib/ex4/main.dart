@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum Weather implements Comparable<Weather> {
+enum Weather{
   phnompenh(
     city: 'Phnom Penh',
     temperature: 12.2,
@@ -50,8 +50,6 @@ enum Weather implements Comparable<Weather> {
     required this.colors,
   });
 
-  @override
-  int compareTo(Weather other) => city.compareTo(other.city);
 }
 
 void main() {
@@ -71,7 +69,6 @@ class MyApp extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(40.0),
           child: ListView.separated(
-            //crossAxisAlignment: CrossAxisAlignment.stretch,
             itemCount: Weather.values.length,
             separatorBuilder: (_, __) => const SizedBox(height: 16),
             itemBuilder: (context, index) {
